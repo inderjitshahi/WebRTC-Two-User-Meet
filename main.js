@@ -1,4 +1,5 @@
-const APP_ID = process.env.APP_ID;
+import env from "./env.js";
+const APP_ID = env.APP_ID;
 let token = null;
 let uid = String(Math.floor(Math.random() * 10000));
 
