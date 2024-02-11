@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lobby.css">
+    <title>PeerChat</title>
+</head>
+
+<body>
+    <main>
+        <div id="form-container">
+            <div id="form__container__header">
+                <p>👋 Create OR join a Room</p>
+            </div>
+            <div id="form__container__wrapper">
+                <form id="join-form">
+                    <div class="field">
+                        <label>Room ID</label>
+                        <input type="text" name="invite_link" />
+                    </div>
+                    <button type="submit">Join Room</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        let form = document.getElementById('join-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let inviteCode = e.target.invite_link.value
+            window.location = `index.html?room=${inviteCode}`;
+        });
+    </script>
+</body>
+
+</html>
